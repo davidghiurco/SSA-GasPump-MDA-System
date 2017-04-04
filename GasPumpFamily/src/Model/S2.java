@@ -1,16 +1,24 @@
 package Model;
 
+import OutputProcessor.OutputProcessor;
+
 class S2 extends State {
 
-    S2(StateMachine model) {super(model);}
+    S2(StateMachine model, OutputProcessor op) {super(model, op);}
 
-    boolean approved() {
-        model.s = model.LS[3];
-        return true;
+    @Override
+    void approved() {
+        if (model.s == model.LS[2]) {
+            model.s = model.LS[3];
+            op.DisplayMenu();
+        }
     }
 
-    boolean rejected() {
-        model.s = model.LS[0];
-        return true;
+    @Override
+    void rejected() {
+        if (model.s == model.LS[2]) {
+            model.s = model.LS[0];
+            op.RejectMsg();
+        }
     }
 }
