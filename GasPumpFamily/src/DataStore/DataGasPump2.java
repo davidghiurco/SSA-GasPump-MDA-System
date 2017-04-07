@@ -19,8 +19,8 @@ public class DataGasPump2 extends Data {
 
 
     // temporary variables
-    public int temp_a;
-    public int temp_b;
-    public int temp_c;
+    public int a;
+    public int b;
+    public int c;
     public float temp_cash;
 }
