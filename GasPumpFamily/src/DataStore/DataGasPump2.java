@@ -5,7 +5,7 @@ public class DataGasPump2 extends Data {
     public int S_price;
     public int P_price;
     public float cash;
-    public float price;
+    public int price;
     public int L;
     public int total;
 
