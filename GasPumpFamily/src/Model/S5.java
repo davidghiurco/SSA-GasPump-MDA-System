@@ -10,7 +10,7 @@ class S5 extends State {
     void pump() {
         if(model.s == model.LS[5]) {
             // stay in the same state
-            op.PumpGastUnit();
+            op.PumpGasUnit();
             op.GasPumpedMsg();
         }
     }
