@@ -2,6 +2,10 @@ package Model;
 
 import OutputProcessor.OutputProcessor;
 
+/*
+    This class is the VM class in the De-centralized State design pattern
+*/
+
 public class StateMachine {
     State s;
     State[] LS;
