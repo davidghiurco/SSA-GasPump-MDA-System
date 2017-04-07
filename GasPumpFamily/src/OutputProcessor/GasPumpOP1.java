@@ -29,16 +29,12 @@ public class GasPumpOP1 extends OutputProcessor {
         GasPump-1 does nothing with this method
     */
     @Override
-    public void StoreCash() {
-
-    }
+    public void StoreCash() {}
 
     @Override
     public void RejectMsg() {
         System.out.println("Credit card rejected");
         System.out.println("Terminating ...");
-        DataGasPump1 d = (DataGasPump1) data;
-        d.reset(); // clear this transaction's input data
     }
 
 
@@ -55,7 +51,6 @@ public class GasPumpOP1 extends OutputProcessor {
     public void CancelMsg() {
         System.out.println("Cancelling ... ");
         DataGasPump1 d = (DataGasPump1) data;
-        d.reset(); // clear this transaction's input data
     }
 
     @Override
@@ -119,13 +114,10 @@ public class GasPumpOP1 extends OutputProcessor {
     }
 
     /*
-        No cash to return but must reset the data object's transaction based values
+        GasPump-1 does nothing with this method
      */
     @Override
-    public void ReturnCash() {
-        DataGasPump1 d = (DataGasPump1) data;
-        d.reset();
-    }
+    public void ReturnCash() {}
 
     /*
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ HELPER METHODS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
