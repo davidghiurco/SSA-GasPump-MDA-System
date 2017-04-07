@@ -41,7 +41,7 @@ public class GasPumpOP1 extends OutputProcessor {
     @Override
     public void DisplayMenu() {
         System.out.println("Credit card approved");
-        System.out.println("Please select gas type :");
+        System.out.println("Please select gas type:");
         System.out.println("1: Regular, 2: Super");
         System.out.println("Otherwise, press any other key to cancel");
 
@@ -50,7 +50,6 @@ public class GasPumpOP1 extends OutputProcessor {
     @Override
     public void CancelMsg() {
         System.out.println("Cancelling ... ");
-        DataGasPump1 d = (DataGasPump1) data;
     }
 
     @Override
@@ -75,7 +74,7 @@ public class GasPumpOP1 extends OutputProcessor {
     public void ReadyMsg() {
         System.out.println("Ready to dispense fuel");
         DataGasPump1 d = (DataGasPump1) data;
-        System.out.println("Press '+' to dispense 1 Gallon of " + gType(d) + " gasoline");
+        System.out.println("Press '+' to dispense 1 gallon of " + gType(d) + " gasoline");
         System.out.println("Otherwise, press any other key to stop");
     }
 
@@ -83,8 +82,7 @@ public class GasPumpOP1 extends OutputProcessor {
     public void PumpGasUnit() {
         DataGasPump1 d = (DataGasPump1) data;
         /*
-            If this were a real gas pump, this is where the subroutine for ACTUALLY
-            pumping a gallon of gasoline would be called.
+            Call the subroutine that ACTUALLY pumps gas here
             Now increment the appropriate data values
         */
         d.G++;
@@ -136,6 +134,7 @@ public class GasPumpOP1 extends OutputProcessor {
             }
             default: {
                 type = "UNDEFINED";
+                break;
             }
         }
         return type;
