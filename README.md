@@ -8,6 +8,7 @@
     - StateMachine is the "VM" class
     - State is the abstract superclass
     - InitState, S0, S1, S2, S3, S4, S5, S6 are the State subclasses 
+    - State classes are responsible for performing both actions and state transitions
 2. Strategy Pattern
     - implemented in package "OutputProcesor" of the GasPumpFamily Module
     - OutputProcessor is the abstract superclass that contains abstract method declarations
