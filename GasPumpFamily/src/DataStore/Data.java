@@ -1,5 +1,3 @@
 package DataStore;
 
-public abstract class Data {
-
-}
+public abstract class Data {}
