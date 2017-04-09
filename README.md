@@ -15,3 +15,10 @@
     - GasPumpOP1 & GasPumpOP2 both inherit these empty methods and implement them each in their own way
     according to specifications for their respective GasPump requirements.
 3. Abstract Factory Pattern
+    - implemented in package "AbstractFactory" of the GasPumpFamily Module
+    - AbstractFactory is the abstract superclass
+    - ConcreteFactory1 is the factory that returns the necessary objects / drivers for GasPump1
+    - ConcreteFactory2 is the factory that returns the necessary objects / drivers for GasPump2
+    - The "GasPump" package contains the abstract class GasPump which uses the correct polymorphed AbstractFactory
+    class to initialize the proper drivers for GasPump1 and GasPump2
+    - The constructors for GasPump1 and GasPump2 just call the super() constructor with the necessary parameter
