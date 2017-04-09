@@ -1,15 +1,11 @@
 package InputProcessor;
-import DataStore.Data;
 import DataStore.DataGasPump2;
-import Model.StateMachine;
 
 public class IPGasPump2 extends InputProcessor {
-    //inherit StateMachine model object
     //inherit Data data object
+    //inherit StateMachine model object
 
-    public IPGasPump2(StateMachine model, DataGasPump2 data) {
-        super(model, data);
-    }
+    public IPGasPump2() {}
 
     void Activate(int a, int b, int c) {
         if (a > 0 && b > 0 && c > 0) {
