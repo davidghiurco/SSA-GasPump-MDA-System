@@ -1,17 +1,15 @@
 package Model;
 
-import OutputProcessor.OutputProcessor;
-
 class S6 extends State {
 
-    S6(StateMachine model, OutputProcessor op) {super(model, op);}
+    S6(StateMachine model) {super(model);}
 
     @Override
     void receipt() {
         if(model.s == model.LS[6]) {
             model.s = model.LS[0];
-            op.PrintReceipt();
-            op.ReturnCash();
+            model.getOP().PrintReceipt();
+            model.getOP().ReturnCash();
         }
     }
 
@@ -19,7 +17,7 @@ class S6 extends State {
     void noReceipt() {
         if(model.s == model.LS[6]) {
             model.s = model.LS[0];
-            op.ReturnCash();
+            model.getOP().ReturnCash();
         }
     }
 }

@@ -9,19 +9,26 @@ import OutputProcessor.OutputProcessor;
 public class StateMachine {
     State s;
     State[] LS;
-    protected OutputProcessor op;
+    private OutputProcessor op;
 
-    public StateMachine(OutputProcessor op) {
+    public StateMachine() {
         LS = new State[8];
-        LS[7] = new InitState(this, op);
-        LS[0] = new S0(this, op);
-        LS[1] = new S1(this, op);
-        LS[2] = new S2(this, op);
-        LS[3] = new S3(this, op);
-        LS[4] = new S4(this, op);
-        LS[5] = new S5(this, op);
-        LS[6] = new S6(this, op);
+        LS[7] = new InitState(this);
+        LS[0] = new S0(this);
+        LS[1] = new S1(this);
+        LS[2] = new S2(this);
+        LS[3] = new S3(this);
+        LS[4] = new S4(this);
+        LS[5] = new S5(this);
+        LS[6] = new S6(this);
         s = LS[7]; // Initially in the Init State
+    }
+
+    OutputProcessor getOP() {
+        return op;
+    }
+
+    public void setOP(OutputProcessor op) {
         this.op = op;
     }
 

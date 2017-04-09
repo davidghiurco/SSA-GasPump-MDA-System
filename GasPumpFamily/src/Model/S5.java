@@ -1,17 +1,15 @@
 package Model;
 
-import OutputProcessor.OutputProcessor;
-
 class S5 extends State {
 
-    S5(StateMachine model, OutputProcessor op) {super(model, op);}
+    S5(StateMachine model) {super(model);}
 
     @Override
     void pump() {
         if(model.s == model.LS[5]) {
             // stay in the same state
-            op.PumpGasUnit();
-            op.GasPumpedMsg();
+            model.getOP().PumpGasUnit();
+            model.getOP().GasPumpedMsg();
         }
     }
 
@@ -19,7 +17,7 @@ class S5 extends State {
     void stopPump() {
         if(model.s == model.LS[5]) {
             model.s = model.LS[6];
-            op.StopMsg();
+            model.getOP().StopMsg();
         }
     }
 }

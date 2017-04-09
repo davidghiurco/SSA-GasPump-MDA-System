@@ -13,11 +13,9 @@ import OutputProcessor.OutputProcessor;
 
 public abstract class State {
     StateMachine model;
-    OutputProcessor op;
 
-    public State(StateMachine model, OutputProcessor op) {
+    public State(StateMachine model) {
         this.model = model;
-        this.op = op;
     }
 
     void activate() {}

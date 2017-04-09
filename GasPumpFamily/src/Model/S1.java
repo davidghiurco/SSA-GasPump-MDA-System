@@ -1,10 +1,8 @@
 package Model;
 
-import OutputProcessor.OutputProcessor;
-
 class S1 extends State {
 
-    S1(StateMachine model, OutputProcessor op) {super(model, op);}
+    S1(StateMachine model) {super(model);}
 
     /*
         credit: t=1
@@ -18,8 +16,8 @@ class S1 extends State {
         }
         else if ((t == 2) && (model.s == model.LS[1])) {
             model.s = model.LS[3];
-            op.StoreCash();
-            op.DisplayMenu();
+            model.getOP().StoreCash();
+            model.getOP().DisplayMenu();
         }
     }
 
