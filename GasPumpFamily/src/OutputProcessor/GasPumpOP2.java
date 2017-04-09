@@ -75,7 +75,7 @@ public class GasPumpOP2 extends OutputProcessor {
     public void ReadyMsg() {
         System.out.println("Ready to dispense fuel");
         DataGasPump2 d = (DataGasPump2) data;
-        System.out.println("Press '+' to dispense 1 liter of " + gType(d) + " gasoline");
+        System.out.println("Press '8' to dispense 1 liter of " + gType(d) + " gasoline");
         System.out.println("Otherwise, press any other key to stop");
 
     }
