@@ -1,4 +1,4 @@
-# Software Systems Architecture
+# Software Systems Architectures
 ## CS 586 Individual Project (Spring, 2017)
 
 ### Design pattern requirement Indications
