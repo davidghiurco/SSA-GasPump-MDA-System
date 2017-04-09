@@ -8,7 +8,13 @@ import DataStore.Data;
 public abstract class OutputProcessor {
      Data data;
 
-    public OutputProcessor(Data data) {
+    public OutputProcessor() {}
+
+    public Data getData() {
+        return data;
+    }
+
+    public void setData(Data data) {
         this.data = data;
     }
 

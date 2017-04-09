@@ -4,9 +4,7 @@ import DataStore.DataGasPump2;
 
 public class GasPumpOP2 extends OutputProcessor {
 
-    public GasPumpOP2(DataGasPump2 data) {
-        super(data);
-    }
+    public GasPumpOP2() {}
 
     @Override
     public void StoreData() {
