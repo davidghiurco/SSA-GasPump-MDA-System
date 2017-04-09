@@ -2,10 +2,10 @@ package DataStore;
 
 public class DataGasPump2 extends Data {
     /*
-    Regular:    1
-    Super:      2
-    Premium:    3
-    Cancel:     Any other string
+        Regular:    1
+        Super:      2
+        Premium:    3
+        Cancel:     Any other string
     */
     public String   gasType;
     public int      R_price;

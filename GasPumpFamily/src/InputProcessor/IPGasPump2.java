@@ -1,6 +1,9 @@
 package InputProcessor;
 import DataStore.DataGasPump2;
 
+/*
+        This class implements the platform specifications for input processing of GasPump2
+*/
 public class IPGasPump2 extends InputProcessor {
     //inherit Data data object
     //inherit StateMachine model object

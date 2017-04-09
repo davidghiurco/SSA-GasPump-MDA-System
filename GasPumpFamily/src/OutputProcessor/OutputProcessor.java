@@ -4,6 +4,7 @@ import DataStore.Data;
 
 /*
     This class is the abstract superclass in the Strategy design pattern
+    Also provides the method declarations that each platform-dependent OutputProcessor will implement
 */
 public abstract class OutputProcessor {
      Data data;
@@ -18,6 +19,8 @@ public abstract class OutputProcessor {
         this.data = data;
     }
 
+
+    // Each of these methods to be over-written by each child OutputProcessor subclass
     public abstract void StoreData();
     public abstract void PayMsg();
     public abstract void StoreCash();

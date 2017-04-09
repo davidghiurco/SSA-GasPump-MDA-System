@@ -8,6 +8,9 @@ import Model.StateMachine;
 import OutputProcessor.OutputProcessor;
 import OutputProcessor.GasPumpOP1;
 
+/*
+    Factory that produces the necessary driver objects for GasPump1
+*/
 public class ConcreteFactory1 extends AbstractFactory {
     @Override
     public Data getData() {return new DataGasPump1();}

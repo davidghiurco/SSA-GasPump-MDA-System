@@ -2,6 +2,10 @@ package OutputProcessor;
 
 import DataStore.DataGasPump2;
 
+/*
+    This class implements the inherited abstract methods of the Strategy Superclass for GasPump-2
+*/
+
 public class GasPumpOP2 extends OutputProcessor {
 
     public GasPumpOP2() {}

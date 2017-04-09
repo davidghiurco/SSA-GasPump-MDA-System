@@ -4,6 +4,9 @@ import OutputProcessor.OutputProcessor;
 
 /*
     This class is the VM class in the De-centralized State design pattern
+    State classes are responsible for performing
+        1) Actions
+        2) State transitions
 */
 
 public class StateMachine {

@@ -1,11 +1,12 @@
 package Model;
 
-import OutputProcessor.OutputProcessor;
-
 /*
+    This class is the abstract State superclass in the De-centralized State Design Pattern
+
     Methods not declared abstract so that each State subclass doesn't have to
     implement methods that it doesn't need.
     Most State Subclasses only overwrite a couple of these methods.
+
     The other methods that are inherited work as intended because
     if they are somehow called from a State which has not re-defined their empty body, nothing
     will happen.

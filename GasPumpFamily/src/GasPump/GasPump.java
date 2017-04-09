@@ -6,6 +6,14 @@ import InputProcessor.InputProcessor;
 import Model.StateMachine;
 import OutputProcessor.OutputProcessor;
 
+/*
+    This abstract superclass implements the client-side of the Abstract Factory design pattern.
+    It provides a constructor which subclasses can use to build up their drivers and necessary objects.
+
+    Each child GasPump class will call this superclass's constructor passing in its own ConcreteFactory
+    as the AbstractFactory field.
+*/
+
 public abstract class GasPump {
     private Data            data;
     private InputProcessor  ip;
@@ -19,9 +27,13 @@ public abstract class GasPump {
         this.model  = af.getStateMachine();
         this.op     = af.getOutputProcessor();
         this.af     = af;
+
+        // IP and OP need to share the same DataStore object to pass around platform-depended data
         this.ip.    setData(this.data);
-        this.model. setOP(this.op);
         this.op.    setData(this.data);
+
+        // StateMachine model needs to use the same OP that IP is communicating with
+        this.model. setOP(this.op);
     }
 
     public Data getData() {

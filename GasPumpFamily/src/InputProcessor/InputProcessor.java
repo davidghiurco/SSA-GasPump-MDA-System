@@ -3,6 +3,9 @@ package InputProcessor;
 import Model.StateMachine;
 import DataStore.Data;
 
+/*
+    This class groups all platform input processors under 1 abstract superclass
+*/
 public abstract class InputProcessor {
     Data data;
     StateMachine model;
