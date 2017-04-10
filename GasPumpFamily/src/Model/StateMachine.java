@@ -27,13 +27,25 @@ public class StateMachine {
         s = LS[7]; // Initially in the Init State
     }
 
-    OutputProcessor getOP() {
+
+    public boolean inState(int i) {
+        return s == LS[i];
+    }
+    /*
+        Getters and Setters
+    */
+
+    public OutputProcessor getOP() {
         return op;
     }
 
     public void setOP(OutputProcessor op) {
         this.op = op;
     }
+
+    /*
+        State operations
+    */
 
     public void activate() {
         s.activate();
@@ -63,6 +75,15 @@ public class StateMachine {
         s.cancel();
     }
 
+    /*
+    Regular:    g=1
+    Super:      g=2
+    Premium:    g=3
+ */
+    public void selectGas(int g) {
+        s.selectGas(g);
+    }
+
     public void startPump() {
         s.startPump();
     }
@@ -73,15 +94,6 @@ public class StateMachine {
 
     public void stopPump() {
         s.stopPump();
-    }
-
-    /*
-        Regular:    g=1
-        Super:      g=2
-        Premium:    g=3
-     */
-    public void selectGas(int g) {
-        s.selectGas(g);
     }
 
     public void receipt() {

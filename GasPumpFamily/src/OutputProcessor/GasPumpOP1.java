@@ -15,12 +15,14 @@ public class GasPumpOP1 extends OutputProcessor {
         DataGasPump1 d = (DataGasPump1) data;
         d.R_price = d.a;
         d.S_price = d.b;
+        System.out.println("GasPump1 activated successfully!");
     }
 
     @Override
     public void PayMsg() {
         System.out.println("Thank you for choosing GasPump-1");
-        System.out.println("Please insert credit card information: ");
+        System.out.println("Please select payment type: ");
+        System.out.println("(3) Credit card");
     }
 
     /*
@@ -32,22 +34,26 @@ public class GasPumpOP1 extends OutputProcessor {
     @Override
     public void RejectMsg() {
         System.out.println("Credit card rejected");
-        System.out.println("Terminating ...");
+        System.out.println("Cancelling ...");
+        System.out.println("Enter an operation: (2) Start");
     }
 
 
     @Override
     public void DisplayMenu() {
+        DataGasPump1 d = (DataGasPump1) data;
         System.out.println("Credit card approved");
         System.out.println("Please select gas type:");
-        System.out.println("1: Regular, 2: Super");
-        System.out.println("Otherwise, press any other key to cancel");
+        System.out.println("(4) Regular [$" + d.R_price + "/gal], " +
+                           "(5) Super [$" + d.S_price + "/gal]");
+        System.out.println("Otherwise, select (6) to cancel");
 
     }
 
     @Override
     public void CancelMsg() {
         System.out.println("Cancelling ... ");
+        System.out.println("Enter an operation: (2) Start");
     }
 
     @Override
@@ -55,10 +61,14 @@ public class GasPumpOP1 extends OutputProcessor {
         DataGasPump1 d = (DataGasPump1) data;
         if (g == 1) { // Regular selected
             d.price = d.R_price;
+            d.gasType = 4;
         }
         else if (g == 2) { // Super selected
             d.price = d.S_price;
+            d.gasType = 5;
         }
+        System.out.println(gType(d) + " gasoline selected @ price of $" + d.price + "/gallon");
+        System.out.println("Enter an operation: (7) Start Pump");
     }
 
     @Override
@@ -72,8 +82,8 @@ public class GasPumpOP1 extends OutputProcessor {
     public void ReadyMsg() {
         System.out.println("Ready to dispense fuel");
         DataGasPump1 d = (DataGasPump1) data;
-        System.out.println("Press '7' to dispense 1 gallon of " + gType(d) + " gasoline");
-        System.out.println("Otherwise, press any other key to stop");
+        System.out.println("Press '8' to dispense 1 gallon of " + gType(d) + " gasoline");
+        System.out.println("Otherwise, press '9' to stop");
     }
 
     @Override
@@ -92,6 +102,8 @@ public class GasPumpOP1 extends OutputProcessor {
         DataGasPump1 d = (DataGasPump1) data;
         System.out.println("Pumped 1 gallon of " + gType(d) + " gasoline");
         System.out.println("Total # of gallons pumped: " + d.G);
+        System.out.println("Press '8' to dispense 1 more gallon of " + gType(d) + " gasoline");
+        System.out.println("Otherwise, press '9' to stop");
     }
 
     @Override
@@ -104,9 +116,10 @@ public class GasPumpOP1 extends OutputProcessor {
         System.out.println("Printing receipt ...");
         System.out.println("*********************************************************************");
         DataGasPump1 d = (DataGasPump1) data;
-        System.out.println(d.G + " gallons of " + d.gasType + " gasoline @ $" + d.price + "/gallon");
-        System.out.println("Total: " + d.total);
+        System.out.println(d.G + " gallons of " + gType(d) + " gasoline @ $" + d.price + "/gallon");
+        System.out.println("Total: $" + d.total);
         System.out.println("*********************************************************************");
+        System.out.println("Enter an operation: (2) Start");
     }
 
     /*
@@ -122,11 +135,11 @@ public class GasPumpOP1 extends OutputProcessor {
     private String gType(DataGasPump1 d) {
         String type;
         switch(d.gasType){
-            case "1": {
+            case 4: {
                 type = "Regular";
                 break;
             }
-            case "2": {
+            case 5: {
                 type = "Super";
                 break;
             }

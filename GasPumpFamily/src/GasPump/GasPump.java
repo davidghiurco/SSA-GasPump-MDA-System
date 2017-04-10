@@ -28,14 +28,25 @@ public abstract class GasPump {
         this.op     = af.getOutputProcessor();
         this.af     = af;
 
-        // IP and OP need to share the same DataStore object to pass around platform-depended data
+        // Initialize the InputProcessor's Data and StateMachine drivers
         this.ip.    setData(this.data);
+        this.ip.    setModel(this.model);
+
+        // Initialize the StateMachine's OutputProcessor
+        this.model. setOP(this.op);
+
+        // Initialize OutputProcessor's DataStore to the same one InputProcessor is using
         this.op.    setData(this.data);
 
-        // StateMachine model needs to use the same OP that IP is communicating with
-        this.model. setOP(this.op);
+
     }
 
+    public abstract void printOperations();
+
+
+    /*
+        GETTERS AND SETTERS
+    */
     public Data getData() {
         return data;
     }

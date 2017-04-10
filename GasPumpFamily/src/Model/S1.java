@@ -8,7 +8,6 @@ class S1 extends State {
         credit: t=1
         cash:   t=2
      */
-
     @Override
     void payType(int t) {
         if ((t == 1) && (model.s == model.LS[1])) {
@@ -20,5 +19,4 @@ class S1 extends State {
             model.getOP().DisplayMenu();
         }
     }
-
 }

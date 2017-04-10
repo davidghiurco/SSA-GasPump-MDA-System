@@ -10,6 +10,5 @@ class S0 extends State {
             model.s = model.LS[1];
             model.getOP().PayMsg();
         }
-
     }
 }

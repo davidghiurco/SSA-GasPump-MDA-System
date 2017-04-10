@@ -19,36 +19,30 @@ public abstract class State {
         this.model = model;
     }
 
-    void activate() {}
-
-    void start() {}
+    void activate()         {notAllowed();}
+    void start()            {notAllowed();}
 
     /*
         credit: t=1
         cash:   t=2
      */
-    void payType(int t) {}
-
-    void approved() {}
-
-    void rejected() {}
-
-    void cancel() {}
-
-    void startPump() {}
-
-    void pump() {}
-
-    void stopPump() {}
-
+    void payType(int t)     {notAllowed();}
+    void approved()         {notAllowed();}
+    void rejected()         {notAllowed();}
+    void cancel()           {notAllowed();}
+    void startPump()        {notAllowed();}
+    void pump()             {notAllowed();}
+    void stopPump()         {notAllowed();}
     /*
         Regular:    g=1
         Super:      g=2
         Premium:    g=3
      */
-    void selectGas(int g) {}
+    void selectGas(int g)   {notAllowed();}
+    void receipt()          {notAllowed();}
+    void noReceipt()        {notAllowed();}
 
-    void receipt() {}
-
-    void noReceipt() {}
+    void notAllowed() {
+        System.out.println("Operation not allowed in this state");
+    }
 }
