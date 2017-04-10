@@ -16,18 +16,21 @@ public class GasPumpOP2 extends OutputProcessor {
         d.R_price = d.a;
         d.S_price = d.b;
         d.P_price = d.c;
+        System.out.println("GasPump2 activated successfully!");
     }
 
     @Override
     public void PayMsg() {
         System.out.println("Thank you for choosing GasPump-2");
-        System.out.println("Please insert cash: ");
+        System.out.println("Please select payment type: ");
+        System.out.println("(3) Cash");
     }
 
     @Override
     public void StoreCash() {
         DataGasPump2  d = (DataGasPump2) data;
         d.cash = d.temp_cash;
+        System.out.println("Amount of cash inserted: $" + d.cash);
     }
 
     /*
@@ -39,10 +42,11 @@ public class GasPumpOP2 extends OutputProcessor {
     @Override
     public void DisplayMenu() {
         DataGasPump2 d = (DataGasPump2) data;
-        System.out.println("Amount of cash inserted: $" + d.cash);
         System.out.println("Please select gas type: ");
-        System.out.println("1: Regular, 2: Super, 3: Premium");
-        System.out.println("Otherwise, press any other key to cancel");
+        System.out.println("(4) Regular [$" + d.R_price +  "/liter], " +
+                           "(5) Super [$" + d.S_price + "/liter], " +
+                           "(6) Premium [$" + d.P_price + "/liter]");
+        System.out.println("Otherwise, select (7) to cancel");
     }
 
     @Override
@@ -55,13 +59,18 @@ public class GasPumpOP2 extends OutputProcessor {
         DataGasPump2 d = (DataGasPump2) data;
         if (g == 1) { // Regular selected
             d.price = d.R_price;
+            d.gasType = 4;
         }
         else if (g == 2) { // Super selected
             d.price = d.S_price;
+            d.gasType = 5;
         }
         else if (g == 3) { // Premium selected
             d.price = d.P_price;
+            d.gasType = 6;
         }
+        System.out.println(gType(d) + " gasoline selected @ price of $" + d.price + "/liter");
+        System.out.println("Enter an operation: (8) Start Pump");
     }
 
     @Override
@@ -75,8 +84,8 @@ public class GasPumpOP2 extends OutputProcessor {
     public void ReadyMsg() {
         System.out.println("Ready to dispense fuel");
         DataGasPump2 d = (DataGasPump2) data;
-        System.out.println("Press '8' to dispense 1 liter of " + gType(d) + " gasoline");
-        System.out.println("Otherwise, press any other key to stop");
+        System.out.println("Press '9' to dispense 1 liter of " + gType(d) + " gasoline");
+        System.out.println("Otherwise, enter '10' to stop");
 
     }
 
@@ -97,11 +106,14 @@ public class GasPumpOP2 extends OutputProcessor {
         DataGasPump2 d = (DataGasPump2) data;
         System.out.println("Pumped 1 liter of " + gType(d) + " gasoline");
         System.out.println("Total # of liters pumped: " + d.L);
+        System.out.println("Press '9' to dispense 1 more liter of " + gType(d) + " gasoline");
+        System.out.println("Otherwise, enter '10' to stop");
     }
 
     @Override
     public void StopMsg() {
         System.out.println("Stopping pump ...");
+        System.out.println("Enter an operation: (11) Print Receipt, (12) No Receipt");
     }
 
     @Override
@@ -109,8 +121,8 @@ public class GasPumpOP2 extends OutputProcessor {
         System.out.println("Printing receipt ...");
         System.out.println("*********************************************************************");
         DataGasPump2 d = (DataGasPump2) data;
-        System.out.println(d.L + " liters of " + d.gasType + " gasoline @ $" + d.price + "/liter");
-        System.out.println("Total: " + d.total);
+        System.out.println(d.L + " liters of " + gType(d) + " gasoline @ $" + d.price + "/liter");
+        System.out.println("Total: $" + (float) d.total);
         System.out.println("*********************************************************************");
     }
 
@@ -128,6 +140,8 @@ public class GasPumpOP2 extends OutputProcessor {
         else {
             System.out.println("No cash to return");
         }
+        System.out.println("Transaction finished");
+        System.out.println("Enter an operation: (2) Start");
     }
     /*
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ HELPER METHODS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -136,15 +150,15 @@ public class GasPumpOP2 extends OutputProcessor {
     private String gType(DataGasPump2 d) {
         String type;
         switch(d.gasType){
-            case "1": {
+            case 4: {
                 type = "Regular";
                 break;
             }
-            case "2": {
+            case 5: {
                 type = "Super";
                 break;
             }
-            case "3": {
+            case 6: {
                 type = "Premium";
                 break;
             }

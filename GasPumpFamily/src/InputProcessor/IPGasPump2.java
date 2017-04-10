@@ -8,53 +8,73 @@ public class IPGasPump2 extends InputProcessor {
     //inherit Data data object
     //inherit StateMachine model object
 
-    public IPGasPump2() {}
+    public IPGasPump2() {
+        super();
+    }
 
-    void Activate(int a, int b, int c) {
-        if (a > 0 && b > 0 && c > 0) {
-            DataGasPump2 d = (DataGasPump2) data;
-            d.a = a;
-            d.b = b;
-            d.c = c;
-            model.activate();
+    public void Activate(Integer a, Integer b, Integer c) {
+        if (a != null && b != null && c != null) {
+            if (a > 0 && b > 0 && c > 0) {
+                DataGasPump2 d = (DataGasPump2) data;
+                d.a = a;
+                d.b = b;
+                d.c = c;
+                model.activate();
+            }
+            else {
+                System.out.println("Activation failed!");
+                System.out.println("Prices must be greater than $0");
+            }
+        }
+        else {
+            model.activate(); // will print not allowed message
         }
     }
 
-    void Start() {
+    public void Start() {
         model.start();
     }
 
-    void PayCash(float cash) {
-        if(cash > 0){
-            DataGasPump2 d = (DataGasPump2) data;
-            d.temp_cash = cash;
-            model.payType(2);
+    public void PayCash(Float cash) {
+        if (cash != null) {
+            if (cash > 0) {
+                DataGasPump2 d = (DataGasPump2) data;
+                d.temp_cash = cash;
+                model.payType(2);
+            }
+            else {
+                System.out.println("Cash amount must be greater than $0");
+            }
+        }
+        else {
+            model.payType(2); // will print not allowed message
         }
     }
 
-    void Cancel() {
+    public void Cancel() {
         model.cancel();
     }
 
-    void Regular() {
+    public void Regular() {
         model.selectGas(1);
     }
 
-    void Super() {
+    public void Super() {
         model.selectGas(2);
     }
 
-    void Premium() {
+    public void Premium() {
         model.selectGas(3);
     }
 
-    void StartPump() {
+    public void StartPump() {
         model.startPump();
     }
 
-    void PumpLiter() {
+    public void PumpLiter() {
         DataGasPump2 d = (DataGasPump2) data;
-        if(d.cash < d.L + 1) {
+        if(d.cash < d.price * (d.L + 1)) {
+            System.out.println("Not enough cash for another liter");
             model.stopPump();
         }
         else {
@@ -62,15 +82,15 @@ public class IPGasPump2 extends InputProcessor {
         }
     }
 
-    void Stop() {
+    public void Stop() {
         model.stopPump();
     }
 
-    void Receipt() {
+    public void Receipt() {
         model.receipt();
     }
 
-    void NoReceipt() {
+    public void NoReceipt() {
         model.noReceipt();
     }
 }
