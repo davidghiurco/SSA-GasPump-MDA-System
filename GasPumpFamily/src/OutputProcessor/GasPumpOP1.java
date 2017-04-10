@@ -8,7 +8,8 @@ import DataStore.DataGasPump1;
 
 public class GasPumpOP1 extends OutputProcessor {
 
-    public GasPumpOP1() {}
+    public GasPumpOP1() {
+    }
 
     @Override
     public void StoreData() {
@@ -29,7 +30,8 @@ public class GasPumpOP1 extends OutputProcessor {
         GasPump-1 does nothing with this method
     */
     @Override
-    public void StoreCash() {}
+    public void StoreCash() {
+    }
 
     @Override
     public void RejectMsg() {
@@ -45,7 +47,7 @@ public class GasPumpOP1 extends OutputProcessor {
         System.out.println("Credit card approved");
         System.out.println("Please select gas type:");
         System.out.println("(4) Regular [$" + d.R_price + "/gal], " +
-                           "(5) Super [$" + d.S_price + "/gal]");
+                "(5) Super [$" + d.S_price + "/gal]");
         System.out.println("Otherwise, select (6) to cancel");
 
     }
@@ -62,8 +64,7 @@ public class GasPumpOP1 extends OutputProcessor {
         if (g == 1) { // Regular selected
             d.price = d.R_price;
             d.gasType = 4;
-        }
-        else if (g == 2) { // Super selected
+        } else if (g == 2) { // Super selected
             d.price = d.S_price;
             d.gasType = 5;
         }
@@ -119,6 +120,7 @@ public class GasPumpOP1 extends OutputProcessor {
         System.out.println(d.G + " gallons of " + gType(d) + " gasoline @ $" + d.price + "/gallon");
         System.out.println("Total: $" + d.total);
         System.out.println("*********************************************************************");
+        System.out.println("Transaction finished");
         System.out.println("Enter an operation: (2) Start");
     }
 
@@ -126,7 +128,8 @@ public class GasPumpOP1 extends OutputProcessor {
         GasPump-1 does nothing with this method
      */
     @Override
-    public void ReturnCash() {}
+    public void ReturnCash() {
+    }
 
     /*
         @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ HELPER METHODS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -134,7 +137,7 @@ public class GasPumpOP1 extends OutputProcessor {
 
     private String gType(DataGasPump1 d) {
         String type;
-        switch(d.gasType){
+        switch (d.gasType) {
             case 4: {
                 type = "Regular";
                 break;
