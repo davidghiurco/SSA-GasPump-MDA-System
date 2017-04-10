@@ -15,28 +15,28 @@ import OutputProcessor.OutputProcessor;
 */
 
 public abstract class GasPump {
-    private Data            data;
-    private InputProcessor  ip;
-    private StateMachine    model;
+    private Data data;
+    private InputProcessor ip;
+    private StateMachine model;
     private OutputProcessor op;
     private AbstractFactory af;
 
     public GasPump(AbstractFactory af) {
-        this.data   = af.getData();
-        this.ip     = af.getInputProcessor();
-        this.model  = af.getStateMachine();
-        this.op     = af.getOutputProcessor();
-        this.af     = af;
+        this.data = af.getData();
+        this.ip = af.getInputProcessor();
+        this.model = af.getStateMachine();
+        this.op = af.getOutputProcessor();
+        this.af = af;
 
         // Initialize the InputProcessor's Data and StateMachine drivers
-        this.ip.    setData(this.data);
-        this.ip.    setModel(this.model);
+        this.ip.setData(this.data);
+        this.ip.setModel(this.model);
 
         // Initialize the StateMachine's OutputProcessor
-        this.model. setOP(this.op);
+        this.model.setOP(this.op);
 
         // Initialize OutputProcessor's DataStore to the same one InputProcessor is using
-        this.op.    setData(this.data);
+        this.op.setData(this.data);
 
 
     }

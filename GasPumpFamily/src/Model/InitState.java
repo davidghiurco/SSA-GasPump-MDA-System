@@ -2,7 +2,9 @@ package Model;
 
 class InitState extends State {
 
-    InitState(StateMachine model) {super(model);}
+    InitState(StateMachine model) {
+        super(model);
+    }
 
     @Override
     void activate() {

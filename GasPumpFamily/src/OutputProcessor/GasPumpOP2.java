@@ -8,7 +8,8 @@ import DataStore.DataGasPump2;
 
 public class GasPumpOP2 extends OutputProcessor {
 
-    public GasPumpOP2() {}
+    public GasPumpOP2() {
+    }
 
     @Override
     public void StoreData() {
@@ -28,7 +29,7 @@ public class GasPumpOP2 extends OutputProcessor {
 
     @Override
     public void StoreCash() {
-        DataGasPump2  d = (DataGasPump2) data;
+        DataGasPump2 d = (DataGasPump2) data;
         d.cash = d.temp_cash;
         System.out.println("Amount of cash inserted: $" + d.cash);
     }
@@ -37,15 +38,16 @@ public class GasPumpOP2 extends OutputProcessor {
         GasPump-2 does nothing with this method
     */
     @Override
-    public void RejectMsg() {}
+    public void RejectMsg() {
+    }
 
     @Override
     public void DisplayMenu() {
         DataGasPump2 d = (DataGasPump2) data;
         System.out.println("Please select gas type: ");
-        System.out.println("(4) Regular [$" + d.R_price +  "/liter], " +
-                           "(5) Super [$" + d.S_price + "/liter], " +
-                           "(6) Premium [$" + d.P_price + "/liter]");
+        System.out.println("(4) Regular [$" + d.R_price + "/liter], " +
+                "(5) Super [$" + d.S_price + "/liter], " +
+                "(6) Premium [$" + d.P_price + "/liter]");
         System.out.println("Otherwise, select (7) to cancel");
     }
 
@@ -60,12 +62,10 @@ public class GasPumpOP2 extends OutputProcessor {
         if (g == 1) { // Regular selected
             d.price = d.R_price;
             d.gasType = 4;
-        }
-        else if (g == 2) { // Super selected
+        } else if (g == 2) { // Super selected
             d.price = d.S_price;
             d.gasType = 5;
-        }
-        else if (g == 3) { // Premium selected
+        } else if (g == 3) { // Premium selected
             d.price = d.P_price;
             d.gasType = 6;
         }
@@ -136,8 +136,7 @@ public class GasPumpOP2 extends OutputProcessor {
             /*
                 Call the subroutine that ACTUALLY returns cash
             */
-        }
-        else {
+        } else {
             System.out.println("No cash to return");
         }
         System.out.println("Transaction finished");
@@ -149,7 +148,7 @@ public class GasPumpOP2 extends OutputProcessor {
 
     private String gType(DataGasPump2 d) {
         String type;
-        switch(d.gasType){
+        switch (d.gasType) {
             case 4: {
                 type = "Regular";
                 break;

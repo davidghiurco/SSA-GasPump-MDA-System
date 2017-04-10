@@ -10,7 +10,8 @@ public abstract class InputProcessor {
     Data data;
     StateMachine model;
 
-    public InputProcessor() {}
+    public InputProcessor() {
+    }
 
     public Data getData() {
         return data;

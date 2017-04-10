@@ -7,9 +7,10 @@ import DataStore.Data;
     Also provides the method declarations that each platform-dependent OutputProcessor will implement
 */
 public abstract class OutputProcessor {
-     Data data;
+    Data data;
 
-    public OutputProcessor() {}
+    public OutputProcessor() {
+    }
 
     public Data getData() {
         return data;
@@ -22,17 +23,30 @@ public abstract class OutputProcessor {
 
     // Each of these methods to be over-written by each child OutputProcessor subclass
     public abstract void StoreData();
+
     public abstract void PayMsg();
+
     public abstract void StoreCash();
+
     public abstract void RejectMsg();
+
     public abstract void DisplayMenu();
+
     public abstract void CancelMsg();
+
     public abstract void SetPrice(int g);
+
     public abstract void SetInitialValues();
+
     public abstract void ReadyMsg();
+
     public abstract void PumpGasUnit();
+
     public abstract void GasPumpedMsg();
+
     public abstract void StopMsg();
+
     public abstract void PrintReceipt();
+
     public abstract void ReturnCash();
 }

@@ -24,8 +24,7 @@ public class IPGasPump1 extends InputProcessor {
                 System.out.println("Activation failed!");
                 System.out.println("Prices must be greater than $0");
             }
-        }
-        else {
+        } else {
             model.activate(); // will print not allowed message
         }
     }

@@ -1,4 +1,5 @@
 package InputProcessor;
+
 import DataStore.DataGasPump2;
 
 /*
@@ -20,13 +21,11 @@ public class IPGasPump2 extends InputProcessor {
                 d.b = b;
                 d.c = c;
                 model.activate();
-            }
-            else {
+            } else {
                 System.out.println("Activation failed!");
                 System.out.println("Prices must be greater than $0");
             }
-        }
-        else {
+        } else {
             model.activate(); // will print not allowed message
         }
     }
@@ -41,12 +40,10 @@ public class IPGasPump2 extends InputProcessor {
                 DataGasPump2 d = (DataGasPump2) data;
                 d.temp_cash = cash;
                 model.payType(2);
-            }
-            else {
+            } else {
                 System.out.println("Cash amount must be greater than $0");
             }
-        }
-        else {
+        } else {
             model.payType(2); // will print not allowed message
         }
     }
@@ -73,11 +70,10 @@ public class IPGasPump2 extends InputProcessor {
 
     public void PumpLiter() {
         DataGasPump2 d = (DataGasPump2) data;
-        if(d.cash < d.price * (d.L + 1)) {
+        if (d.cash < d.price * (d.L + 1)) {
             System.out.println("Not enough cash for another liter");
             model.stopPump();
-        }
-        else {
+        } else {
             model.pump();
         }
     }

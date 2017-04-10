@@ -5,7 +5,9 @@ import DataStore.DataGasPump1;
 import InputProcessor.IPGasPump1;
 
 public class GasPump1 extends GasPump {
-    public GasPump1(AbstractFactory af) {super(af);}
+    public GasPump1(AbstractFactory af) {
+        super(af);
+    }
 
     @Override
     public void printOperations() {
@@ -49,7 +51,7 @@ public class GasPump1 extends GasPump {
         ip.Rejected();
     }
 
-    public void Regular(){
+    public void Regular() {
         IPGasPump1 ip = (IPGasPump1) this.getIP();
         ip.Regular();
     }

@@ -2,7 +2,9 @@ package Model;
 
 class S3 extends State {
 
-    S3(StateMachine model) {super(model);}
+    S3(StateMachine model) {
+        super(model);
+    }
 
     @Override
     void selectGas(int g) {

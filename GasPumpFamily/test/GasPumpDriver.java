@@ -39,8 +39,7 @@ public class GasPumpDriver {
                                             gp1.Activate(a, b);
                                             if (a > 0 && b > 0) {
                                                 System.out.println("Enter an operation: (2) Start");
-                                            }
-                                            else {
+                                            } else {
                                                 System.out.println("Enter an operation: (1) Activate");
                                             }
                                         } catch (NumberFormatException e) {
@@ -141,10 +140,9 @@ public class GasPumpDriver {
                                             System.out.println("Enter the price of Premium Gas: ");
                                             c = Integer.parseInt(scan.readLine());
                                             gp2.Activate(a, b, c);
-                                            if (a> 0 && b > 0 && c > 0) {
+                                            if (a > 0 && b > 0 && c > 0) {
                                                 System.out.println("Enter an operation: (2) Start");
-                                            }
-                                            else {
+                                            } else {
                                                 System.out.println("Enter an operation: (1) Activate");
                                             }
                                         } catch (NumberFormatException e) {

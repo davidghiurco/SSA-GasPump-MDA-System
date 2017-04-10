@@ -2,7 +2,9 @@ package Model;
 
 class S2 extends State {
 
-    S2(StateMachine model) {super(model);}
+    S2(StateMachine model) {
+        super(model);
+    }
 
     @Override
     void approved() {
