@@ -11,21 +11,20 @@ public class GasPump2 extends GasPump {
     @Override
     public void printOperations() {
         System.out.println(
-                "GasPump-2 " +
-                        "\nMENU of Operations: " +
-                        "\n(0) Activate" +
-                        "\n(1) Start" +
-                        "\n(2) Pay Cash" +
-                        "\n(3) Select Regular Gas " +
-                        "\n(4) Select Super Gas " +
-                        "\n(5) Select Premium Gas " +
-                        "\n(6) Cancel" +
-                        "\n(7) Start Pump" +
-                        "\n(8) Pump Liter" +
-                        "\n(9) Stop " +
-                        "\n(p) Print Receipt" +
-                        "\n(n) No Receipt" +
-                        "\n(q) Quit the program"
+                "Select operation: " +
+                        "\n(0) Activate(int a, int b, int c)" +
+                        "\n(1) Start " +
+                        "(2) PayCash " +
+                        "\n(3) RegularGas " +
+                        "(4) SuperGas " +
+                        "(5) PremiumGas " +
+                        "(6) Cancel " +
+                        "\n(7) StartPump " +
+                        "(8) PumpLiter " +
+                        "(9) Stop " +
+                        "\n(p) PrintReceipt " +
+                        "(n) NoReceipt " +
+                        "(q) Quit the program "
         );
     }
 
@@ -88,5 +87,4 @@ public class GasPump2 extends GasPump {
         IPGasPump2 ip = (IPGasPump2) this.getIP();
         ip.NoReceipt();
     }
-
 }

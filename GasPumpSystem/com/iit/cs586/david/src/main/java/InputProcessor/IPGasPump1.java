@@ -13,19 +13,15 @@ public class IPGasPump1 extends InputProcessor {
         super();
     }
 
-    public void Activate(Float a, Float b) {
-        if (a != null && b != null) {
-            if (a > 0 && b > 0) {
-                DataGasPump1 d = (DataGasPump1) data;
-                d.a = a;
-                d.b = b;
-                model.activate();
-            } else {
-                System.out.println("Activation failed!");
-                System.out.println("Prices must be greater than $0");
-            }
+    public void Activate(float a, float b) {
+        if (a > 0 && b > 0) {
+            DataGasPump1 d = (DataGasPump1) data;
+            d.a = a;
+            d.b = b;
+            model.activate();
         } else {
-            model.activate(); // will print not allowed message
+            System.out.println("Activation failed!");
+            System.out.println("Prices must be greater than $0");
         }
     }
 
@@ -33,9 +29,7 @@ public class IPGasPump1 extends InputProcessor {
         model.start();
     }
 
-    public void PayCredit(String credit_card) {
-        DataGasPump1 d = (DataGasPump1) data;
-        d.credit_card = credit_card;
+    public void PayCredit() {
         model.payType(1);
     }
 

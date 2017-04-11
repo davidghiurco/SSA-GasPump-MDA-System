@@ -3,13 +3,10 @@ package Model;
 /*
     This class is the abstract State superclass in the De-centralized State Design Pattern
 
-    Methods not declared abstract so that each State subclass doesn't have to
-    implement methods that it doesn't need.
-    Most State Subclasses only overwrite a couple of these methods.
-
-    The other methods that are inherited work as intended because
-    if they are somehow called from a State which has not re-defined their empty body, nothing
-    will happen.
+    Methods are initially defined to print a "Not Allowed" message.
+    Each state subclass inherits these methods and overrides the appropriate ones.
+    This means that methods that do not get overridden will print a "Not Allowed" message
+    if they are called from a state that does not allow them to be called
 */
 
 public abstract class State {
@@ -27,8 +24,8 @@ public abstract class State {
         cash:   t=2
      */
     void payType(int t)     {notAllowed();}
-    void approve()         {notAllowed();}
-    void reject()         {notAllowed();}
+    void approve()          {notAllowed();}
+    void reject()           {notAllowed();}
     /*
     Regular:    g=1
     Super:      g=2
@@ -43,6 +40,6 @@ public abstract class State {
     void noReceipt()        {notAllowed();}
 
     private void notAllowed() {
-        System.out.println("Operation not allowed in this state");
+        System.out.println("OPERATION NOT ALLOWED IN THIS STATE");
     }
 }

@@ -24,7 +24,6 @@ public class GasPumpOP2 extends OutputProcessor {
     public void PayMsg() {
         System.out.println("Thank you for choosing GasPump-2");
         System.out.println("Please select payment type: ");
-        System.out.println("(2) Cash");
     }
 
     @Override
@@ -71,7 +70,7 @@ public class GasPumpOP2 extends OutputProcessor {
             d.gasType = 5;
         }
         System.out.println(gType(d) + " gasoline selected @ price of $" + d.price + "/liter");
-        System.out.println("Enter an operation: (7) Start Pump");
+        System.out.println("Select (7) to start the pump");
     }
 
     @Override
@@ -114,7 +113,6 @@ public class GasPumpOP2 extends OutputProcessor {
     @Override
     public void StopMsg() {
         System.out.println("Stopping pump ...");
-        System.out.println("Enter an operation: (p) Print Receipt, (n) No Receipt");
     }
 
     @Override

@@ -25,33 +25,39 @@ public class GasPumpDriver {
                 case 1: {
                     ConcreteFactory1 cf1 = new ConcreteFactory1();
                     GasPump1 gp1 = new GasPump1(cf1);
-                    gp1.printOperations();
-                    System.out.println("Enter an operation: (0) Activate");
+                    System.out.println(
+                            "GasPump-1 " +
+                                    "\nMENU of Operations: " +
+                                    "\n-------------------------" +
+                                    "\n(0) Activate(float a, float b) " +
+                                    "\n(1) Start " +
+                                    "\n(2) PayCredit " +
+                                    "\n(3) Approve " +
+                                    "\n(4) Reject" +
+                                    "\n(5) SelectRegularGas " +
+                                    "\n(6) SelectSuperGas " +
+                                    "\n(7) Cancel " +
+                                    "\n(8) StartPump " +
+                                    "\n(9) PumpGallon " +
+                                    "\n(x) StopPump" +
+                                    "\n{q} Quit the program" +
+                                    "\n-------------------------"
+                    );
                     while (!input.equals("q")) {
+                        gp1.printOperations();
                         input = scan.readLine();
                         switch (input) {
                             case "0": {
                                 System.out.println(">Activate<");
-                                // Don't prompt for input if operation is not allowed in the current state
-                                if (gp1.getModel().inState(7)) { // Activate() is only allowed in state s = LS[7]
-                                    float a, b;
-                                    System.out.println("Enter the price of Regular Gas: ");
-                                    try {
-                                        a = Float.parseFloat(scan.readLine());
-                                        System.out.println("Enter the price of Super Gas: ");
-                                        b = Float.parseFloat(scan.readLine());
-                                        gp1.Activate(a, b);
-                                        if (a > 0 && b > 0) {
-                                            System.out.println("Enter an operation: (1) Start");
-                                        } else {
-                                            System.out.println("Enter an operation: (0) Activate");
-                                        }
-                                    } catch (NumberFormatException e) {
-                                        System.out.println("Type mismatch. Price must be a floating point number (float).");
-                                        System.out.println("Enter an operation: (0) Activate");
-                                    }
-                                } else {
-                                    gp1.Activate(null, null); // will produce not allowed message
+                                float a, b;
+                                System.out.println("Enter the price parameter a: ");
+                                try {
+                                    a = Float.parseFloat(scan.readLine());
+                                    System.out.println("Enter the price parameter b: ");
+                                    b = Float.parseFloat(scan.readLine());
+                                    gp1.Activate(a, b);
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Type mismatch. Price must be a floating point number (float).");
                                 }
                                 break;
                             }
@@ -61,17 +67,8 @@ public class GasPumpDriver {
                                 break;
                             }
                             case "2": {
-                                System.out.println(">Pay Credit<");
-                                if (gp1.getModel().inState(1)) {
-                                    System.out.println("Enter credit card information:");
-                                    String credit_card = scan.readLine(); // allow spaces in the credit card information string
-                                    System.out.println("Credit card info: " + "'" + credit_card + "'");
-                                    gp1.PayCredit(credit_card);
-                                    System.out.println("Enter an operation: (3) Approve, (4) Reject");
-
-                                } else { // if not in state 1
-                                    gp1.PayCredit(null); // will produce not allowed message
-                                }
+                                System.out.println(">PayCredit");
+                                gp1.PayCredit();
                                 break;
                             }
                             case "3": {
@@ -85,12 +82,12 @@ public class GasPumpDriver {
                                 break;
                             }
                             case "5": {
-                                System.out.println(">Select Regular Gas<");
+                                System.out.println(">SelectRegularGas<");
                                 gp1.Regular();
                                 break;
                             }
                             case "6": {
-                                System.out.println(">Select Super Gas<");
+                                System.out.println(">SelectSuperGas<");
                                 gp1.Super();
                                 break;
                             }
@@ -100,17 +97,17 @@ public class GasPumpDriver {
                                 break;
                             }
                             case "8": {
-                                System.out.println(">Start Pump<");
+                                System.out.println(">StartPump<");
                                 gp1.StartPump();
                                 break;
                             }
                             case "9": {
-                                System.out.println(">Pump Gallon<");
+                                System.out.println(">PumpGallon<");
                                 gp1.PumpGallon();
                                 break;
                             }
                             case "x": {
-                                System.out.println(">Stop Pump<");
+                                System.out.println(">StopPump<");
                                 gp1.StopPump();
                                 break;
                             }
@@ -119,7 +116,7 @@ public class GasPumpDriver {
                             }
                             default: {
                                 System.out.println("Unknown operation: '" + input + "'");
-                                System.out.println("Please enter a valid operation");
+                                System.out.println("Please select a valid operation");
                                 break;
                             }
                         }
@@ -130,35 +127,42 @@ public class GasPumpDriver {
                 case 2: {
                     ConcreteFactory2 cf2 = new ConcreteFactory2();
                     GasPump2 gp2 = new GasPump2(cf2);
-                    gp2.printOperations();
-                    System.out.println("Enter an operation: (0) Activate");
+                    System.out.println(
+                            "GasPump-2 " +
+                                    "\n-------------------------" +
+                                    "\nMENU of Operations: " +
+                                    "\n(0) Activate (int a, int b, int c)" +
+                                    "\n(1) Start" +
+                                    "\n(2) PayCash" +
+                                    "\n(3) SelectRegularGas " +
+                                    "\n(4) SelectSuperGas " +
+                                    "\n(5) SelectPremiumGas " +
+                                    "\n(6) Cancel" +
+                                    "\n(7) StartPump" +
+                                    "\n(8) PumpLiter" +
+                                    "\n(9) Stop " +
+                                    "\n(p) PrintReceipt" +
+                                    "\n(n) NoReceipt" +
+                                    "\n(q) Quit the program" +
+                                    "\n-------------------------"
+                    );
                     while (!input.equals("q")) {
+                        gp2.printOperations();
                         input = scan.readLine();
                         switch (input) {
                             case "0": {
                                 System.out.println(">Activate<");
-                                // Don't prompt for input if operation is now allowed in current state
-                                if (gp2.getModel().inState(7)) { // Activate() is only allowed in state s = LS[7]
-                                    int a, b, c;
-                                    System.out.println("Enter the price of Regular Gas: ");
-                                    try {
-                                        a = Integer.parseInt(scan.readLine());
-                                        System.out.println("Enter the price of Super Gas: ");
-                                        b = Integer.parseInt(scan.readLine());
-                                        System.out.println("Enter the price of Premium Gas: ");
-                                        c = Integer.parseInt(scan.readLine());
-                                        gp2.Activate(a, b, c);
-                                        if (a > 0 && b > 0 && c > 0) {
-                                            System.out.println("Enter an operation: (1) Start");
-                                        } else {
-                                            System.out.println("Enter an operation: (0) Activate");
-                                        }
-                                    } catch (NumberFormatException e) {
-                                        System.out.println("Type mismatch. Price must be an integer.");
-                                        System.out.println("Enter an operation: (0) Activate");
-                                    }
-                                } else {
-                                    gp2.Activate(null, null, null); // will produce not allowed message
+                                int a, b, c;
+                                System.out.println("Enter the price parameter a: ");
+                                try {
+                                    a = Integer.parseInt(scan.readLine());
+                                    System.out.println("Enter the price parameter b: ");
+                                    b = Integer.parseInt(scan.readLine());
+                                    System.out.println("Enter the price parameter c: ");
+                                    c = Integer.parseInt(scan.readLine());
+                                    gp2.Activate(a, b, c);
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Type mismatch. Price must be an integer.");
                                 }
                                 break;
                             }
@@ -169,17 +173,12 @@ public class GasPumpDriver {
                             }
                             case "2": {
                                 System.out.println(">Pay Cash<");
-                                if (gp2.getModel().inState(1)) {
-                                    System.out.println("Insert cash (enter $ amount): ");
-                                    try {
-                                        float cash = Float.parseFloat(scan.readLine());
-                                        gp2.PayCash(cash);
-                                    } catch (NumberFormatException e) {
-                                        System.out.println("Type mismatch. Dollar amount must be a floating point decimal number");
-                                        System.out.println("Enter an action: (2) Pay Cash");
-                                    }
-                                } else { // if not in state 1
-                                    gp2.PayCash(null); // will produce not allowed message
+                                System.out.println("Insert cash (enter $ amount): ");
+                                try {
+                                    float cash = Float.parseFloat(scan.readLine());
+                                    gp2.PayCash(cash);
+                                } catch (NumberFormatException e) {
+                                    System.out.println("Type mismatch. Dollar amount must be a floating point decimal number");
                                 }
                                 break;
                             }

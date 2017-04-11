@@ -26,11 +26,6 @@ public class StateMachine {
         LS[6] = new S6(this);
         s = LS[7]; // Initially in the Init State
     }
-
-
-    public boolean inState(int i) {
-        return s == LS[i];
-    }
     /*
         Getters and Setters
     */

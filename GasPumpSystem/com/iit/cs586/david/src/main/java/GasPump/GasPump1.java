@@ -11,22 +11,19 @@ public class GasPump1 extends GasPump {
     @Override
     public void printOperations() {
         System.out.println(
-                "GasPump-1 " +
-                        "\nMENU of Operations: " +
-                        "\n-------------------------" +
-                        "\n(0) Activate " +
+                        "Select operation: " +
+                        "\n(0) Activate(float a, float b) " +
                         "\n(1) Start " +
-                        "\n(2) Pay Credit " +
-                        "\n(3) Approve " +
-                        "\n(4) Reject" +
-                        "\n(5) Select Regular Gas " +
-                        "\n(6) Select Super Gas " +
-                        "\n(7) Cancel " +
-                        "\n(8) Start Pump " +
-                        "\n(9) Pump Gallon " +
-                        "\n(x) Stop Pump" +
-                        "\n{q} Quit the program" +
-                        "\n-------------------------"
+                        "(2) PayCredit " +
+                        "(3) Approve " +
+                        "(4) Reject" +
+                        "\n(5) RegularGas " +
+                        "(6) SuperGas " +
+                        "(7) Cancel " +
+                        "\n(8) StartPump " +
+                        "(9) PumpGallon " +
+                        "(x) StopPump " +
+                        "{q} Quit the program "
         );
     }
 
@@ -40,9 +37,9 @@ public class GasPump1 extends GasPump {
         ip.Start();
     }
 
-    public void PayCredit(String credit_card) {
+    public void PayCredit() {
         IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.PayCredit(credit_card);
+        ip.PayCredit();
     }
 
     public void Approve() {
@@ -84,8 +81,4 @@ public class GasPump1 extends GasPump {
         IPGasPump1 ip = (IPGasPump1) this.getIP();
         ip.StopPump();
     }
-
-    /*
-        HELPER METHODS
-    */
 }

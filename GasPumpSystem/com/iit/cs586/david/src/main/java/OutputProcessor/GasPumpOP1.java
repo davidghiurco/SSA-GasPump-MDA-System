@@ -22,8 +22,7 @@ public class GasPumpOP1 extends OutputProcessor {
     @Override
     public void PayMsg() {
         System.out.println("Thank you for choosing GasPump-1");
-        System.out.println("Please select payment type: ");
-        System.out.println("(2) Credit card");
+        System.out.println("Please select payment type");
     }
 
     /*
@@ -36,8 +35,7 @@ public class GasPumpOP1 extends OutputProcessor {
     @Override
     public void RejectMsg() {
         System.out.println("Credit card rejected");
-        System.out.println("Cancelling ...");
-        System.out.println("Enter an operation: (1) Start");
+        System.out.println("Cancelling transaction ...");
     }
 
 
@@ -55,8 +53,7 @@ public class GasPumpOP1 extends OutputProcessor {
 
     @Override
     public void CancelMsg() {
-        System.out.println("Cancelling ... ");
-        System.out.println("Enter an operation: (1) Start");
+        System.out.println("Cancelling transaction ... ");
     }
 
     @Override
@@ -70,7 +67,7 @@ public class GasPumpOP1 extends OutputProcessor {
             d.gasType = 6;
         }
         System.out.println(gType(d) + " gasoline selected @ price of $" + d.price + "/gallon");
-        System.out.println("Enter an operation: (8) Start Pump");
+        System.out.println("Select (8) to start the pump");
     }
 
     @Override
@@ -84,8 +81,8 @@ public class GasPumpOP1 extends OutputProcessor {
     public void ReadyMsg() {
         System.out.println("Ready to dispense fuel");
         DataGasPump1 d = (DataGasPump1) data;
-        System.out.println("Select '9' to dispense 1 gallon of " + gType(d) + " gasoline");
-        System.out.println("Otherwise, select 'x' to stop");
+        System.out.println("Select (9) to dispense 1 gallon of " + gType(d) + " gasoline");
+        System.out.println("Otherwise, select '(x) to stop");
     }
 
     @Override
@@ -104,8 +101,8 @@ public class GasPumpOP1 extends OutputProcessor {
         DataGasPump1 d = (DataGasPump1) data;
         System.out.println("Pumped 1 gallon of " + gType(d) + " gasoline");
         System.out.println("Total # of gallons pumped: " + d.G);
-        System.out.println("Select '9' to dispense 1 more gallon of " + gType(d) + " gasoline");
-        System.out.println("Otherwise, select 'x' to stop");
+        System.out.println("Select (9) to dispense 1 more gallon of " + gType(d) + " gasoline");
+        System.out.println("Otherwise, select (x) to stop");
     }
 
     @Override
@@ -121,8 +118,7 @@ public class GasPumpOP1 extends OutputProcessor {
         System.out.println(d.G + " gallons of " + gType(d) + " gasoline @ $" + d.price + "/gallon");
         System.out.println("Total: $" + d.total);
         System.out.println("*********************************************************************");
-        System.out.println("Transaction finished");
-        System.out.println("Enter an operation: (1) Start");
+        System.out.println("Transaction complete");
     }
 
     /*
