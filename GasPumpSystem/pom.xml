@@ -13,7 +13,7 @@
         <defaultGoal>install</defaultGoal>
         <finalName>${project.artifactId}-${project.version}</finalName>
         <directory>${project.basedir}/target</directory>
-        <sourceDirectory>src/com/iit/cs586/david/main/java</sourceDirectory>
+        <sourceDirectory>src/com/iit/cs586/david/java</sourceDirectory>
         <outputDirectory>${project.build.directory}/classes</outputDirectory>
 
         <plugins>
