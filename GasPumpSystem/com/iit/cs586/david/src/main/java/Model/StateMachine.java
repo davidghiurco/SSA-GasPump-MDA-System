@@ -63,12 +63,12 @@ public class StateMachine {
         s.payType(t);
     }
 
-    public void approved() {
-        s.approved();
+    public void approve() {
+        s.approve();
     }
 
-    public void rejected() {
-        s.rejected();
+    public void reject() {
+        s.reject();
     }
 
     public void cancel() {

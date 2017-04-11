@@ -7,7 +7,7 @@ class S2 extends State {
     }
 
     @Override
-    void approved() {
+    void approve() {
         if (model.s == model.LS[2]) {
             model.s = model.LS[3];
             model.getOP().DisplayMenu();
@@ -15,7 +15,7 @@ class S2 extends State {
     }
 
     @Override
-    void rejected() {
+    void reject() {
         if (model.s == model.LS[2]) {
             model.s = model.LS[0];
             model.getOP().RejectMsg();

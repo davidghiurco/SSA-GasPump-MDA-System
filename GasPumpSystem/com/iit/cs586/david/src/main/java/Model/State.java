@@ -27,8 +27,8 @@ public abstract class State {
         cash:   t=2
      */
     void payType(int t)     {notAllowed();}
-    void approved()         {notAllowed();}
-    void rejected()         {notAllowed();}
+    void approve()         {notAllowed();}
+    void reject()         {notAllowed();}
     /*
     Regular:    g=1
     Super:      g=2

@@ -39,12 +39,12 @@ public class IPGasPump1 extends InputProcessor {
         model.payType(1);
     }
 
-    public void Approved() {
-        model.approved();
+    public void Approve() {
+        model.approve();
     }
 
-    public void Rejected() {
-        model.rejected();
+    public void Reject() {
+        model.reject();
     }
 
     public void Cancel() {

@@ -1,7 +1,6 @@
 package GasPump;
 
 import AbstractFactory.AbstractFactory;
-import DataStore.DataGasPump2;
 import InputProcessor.IPGasPump2;
 
 public class GasPump2 extends GasPump {
@@ -11,21 +10,22 @@ public class GasPump2 extends GasPump {
 
     @Override
     public void printOperations() {
-        DataGasPump2 d = (DataGasPump2) this.getData();
         System.out.println(
-                "Enter an operation: " +
-                        "\n (1) Activate" +
-                        " (2): Start" +
-                        " (3) Pay Cash" +
-                        "\n (4) Select Regular Gas [$" + d.R_price + "/liter]" +
-                        " (5) Select Super Gas [$" + d.S_price + "/liter]" +
-                        " (6) Select Premium Gas [$" + d.P_price + "/liter]" +
-                        " (7) Cancel" +
-                        "\n (8) Start Pump" +
-                        " (9) Pump Liter" +
-                        "(10) Stop Pump" +
-                        "\n(11) Print Receipt" +
-                        "(12) No Receipt"
+                "GasPump-2 " +
+                        "\nMENU of Operations: " +
+                        "\n(0) Activate" +
+                        "\n(1) Start" +
+                        "\n(2) Pay Cash" +
+                        "\n(3) Select Regular Gas " +
+                        "\n(4) Select Super Gas " +
+                        "\n(5) Select Premium Gas " +
+                        "\n(6) Cancel" +
+                        "\n(7) Start Pump" +
+                        "\n(8) Pump Liter" +
+                        "\n(9) Stop " +
+                        "\n(p) Print Receipt" +
+                        "\n(n) No Receipt" +
+                        "\n(q) Quit the program"
         );
     }
 
@@ -88,4 +88,5 @@ public class GasPump2 extends GasPump {
         IPGasPump2 ip = (IPGasPump2) this.getIP();
         ip.NoReceipt();
     }
+
 }

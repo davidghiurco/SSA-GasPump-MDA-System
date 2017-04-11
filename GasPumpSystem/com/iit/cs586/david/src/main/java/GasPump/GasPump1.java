@@ -1,7 +1,6 @@
 package GasPump;
 
 import AbstractFactory.AbstractFactory;
-import DataStore.DataGasPump1;
 import InputProcessor.IPGasPump1;
 
 public class GasPump1 extends GasPump {
@@ -11,18 +10,23 @@ public class GasPump1 extends GasPump {
 
     @Override
     public void printOperations() {
-        DataGasPump1 d = (DataGasPump1) this.getData();
         System.out.println(
-                "Enter an operation: " +
-                        "\n(1) Activate " +
-                        "(2) Start " +
-                        "(3) Pay Credit " +
-                        "\n(4) Select Regular Gas [$" + d.R_price + "/gal]" +
-                        "(5) Select Super Gas [$" + d.S_price + "/gal]" +
-                        "(6) Cancel " +
-                        "\n(7) Start Pump " +
-                        "(8) Pump Gallon " +
-                        "(9) Stop Pump"
+                "GasPump-1 " +
+                        "\nMENU of Operations: " +
+                        "\n-------------------------" +
+                        "\n(0) Activate " +
+                        "\n(1) Start " +
+                        "\n(2) Pay Credit " +
+                        "\n(3) Approve " +
+                        "\n(4) Reject" +
+                        "\n(5) Select Regular Gas " +
+                        "\n(6) Select Super Gas " +
+                        "\n(7) Cancel " +
+                        "\n(8) Start Pump " +
+                        "\n(9) Pump Gallon " +
+                        "\n(x) Stop Pump" +
+                        "\n{q} Quit the program" +
+                        "\n-------------------------"
         );
     }
 
@@ -41,14 +45,14 @@ public class GasPump1 extends GasPump {
         ip.PayCredit(credit_card);
     }
 
-    public void Approved() {
+    public void Approve() {
         IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Approved();
+        ip.Approve();
     }
 
-    public void Rejected() {
+    public void Reject() {
         IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Rejected();
+        ip.Reject();
     }
 
     public void Regular() {
@@ -80,4 +84,8 @@ public class GasPump1 extends GasPump {
         IPGasPump1 ip = (IPGasPump1) this.getIP();
         ip.StopPump();
     }
+
+    /*
+        HELPER METHODS
+    */
 }
