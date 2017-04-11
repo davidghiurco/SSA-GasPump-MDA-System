@@ -6,7 +6,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
@@ -14,3 +13,9 @@
 hs_err_pid*
 out/
 test/java
+GasPumpSystem/com/iit/cs586/david/src/main/resources/
+GasPumpSystem/com/iit/cs586/david/src/test/
+GasPumpSystem/target/classes/
+GasPumpSystem/target/generated-sources/
+GasPumpSystem/target/maven-archiver/
+GasPumpSystem/target/maven-status/
