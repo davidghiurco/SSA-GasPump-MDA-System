@@ -21,7 +21,7 @@ public abstract class OutputProcessor {
     }
 
 
-    // Each of these methods to be over-written by each child OutputProcessor subclass
+    // Each of these methods to be overridden by each child OutputProcessor subclass
     public abstract void StoreData();
 
     public abstract void PayMsg();

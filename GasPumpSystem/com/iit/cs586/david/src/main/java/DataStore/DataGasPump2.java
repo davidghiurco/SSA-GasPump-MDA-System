@@ -2,9 +2,9 @@ package DataStore;
 
 public class DataGasPump2 extends Data {
     /*
-        Regular:    4
-        Super:      5
-        Premium:    6
+        Regular:    3
+        Super:      4
+        Premium:    5
     */
     public int      gasType;
     public int      R_price;
