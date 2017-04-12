@@ -1,6 +1,6 @@
 package InputProcessor;
 
-import DataStore.DataGasPump1;
+import PlatformData.DataGasPump1;
 
 /*
     This class implements the platform specifications for input processing of GasPump1
@@ -31,6 +31,7 @@ public class IPGasPump1 extends InputProcessor {
 
     public void PayCredit() {
         model.payType(1);
+        System.out.println("PLEASE WAIT -- AUTHENTICATING CREDIT CARD");
     }
 
     public void Approve() {

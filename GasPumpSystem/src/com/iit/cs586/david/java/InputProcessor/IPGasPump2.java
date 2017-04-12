@@ -1,6 +1,6 @@
 package InputProcessor;
 
-import DataStore.DataGasPump2;
+import PlatformData.DataGasPump2;
 
 /*
         This class implements the platform specifications for input processing of GasPump2
@@ -63,7 +63,7 @@ public class IPGasPump2 extends InputProcessor {
     public void PumpLiter() {
         DataGasPump2 d = (DataGasPump2) data;
         if (d.cash < d.price * (d.L + 1)) {
-            System.out.println("Not enough cash for another liter");
+            System.out.println("NOT ENOUGH CASH");
             model.stopPump();
         } else {
             model.pump();

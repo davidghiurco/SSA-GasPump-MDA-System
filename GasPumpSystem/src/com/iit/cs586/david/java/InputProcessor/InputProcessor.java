@@ -1,7 +1,7 @@
 package InputProcessor;
 
-import Model.StateMachine;
-import DataStore.Data;
+import Model.EFSM.StateMachine;
+import PlatformData.Data;
 
 /*
     This class groups all platform input processors under 1 abstract superclass

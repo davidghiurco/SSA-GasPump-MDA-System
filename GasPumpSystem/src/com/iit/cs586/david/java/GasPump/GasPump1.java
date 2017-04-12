@@ -11,7 +11,8 @@ public class GasPump1 extends GasPump {
     @Override
     public void printOperations() {
         System.out.println(
-                        "Select operation: " +
+                        "*********************************************************************" +
+                        "\nSelect operation: " +
                         "\n(0) Activate(float a, float b) " +
                         "\n(1) Start " +
                         "(2) PayCredit " +
@@ -23,7 +24,8 @@ public class GasPump1 extends GasPump {
                         "\n(8) StartPump " +
                         "(9) PumpGallon " +
                         "(x) StopPump " +
-                        "{q} Quit the program "
+                        "{q} Quit the program " +
+                        "\n*********************************************************************"
         );
     }
 
