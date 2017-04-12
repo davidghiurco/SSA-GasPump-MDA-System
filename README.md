@@ -27,10 +27,10 @@
 ### How to run
 To run the executable, from the root directory of the project:
 
-    $ java -jar GasPumpSystem/target/GasPumpSystem-1.0.jar
+    $ java -jar GasPumpSystem/target/GasPumpSystem-1.1.jar
     
 To compile the source code using Maven, then run the resulting executable:
     
     $ cd GasPumpSystem/
     $ mvn
-    $ java -jar target/GasPumpSystem-1.0.jar
+    $ java -jar target/GasPumpSystem-1.1.jar
