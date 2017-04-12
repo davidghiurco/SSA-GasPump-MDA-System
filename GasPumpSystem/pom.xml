@@ -13,7 +13,7 @@
         <defaultGoal>install</defaultGoal>
         <finalName>${project.artifactId}-${project.version}</finalName>
         <directory>${project.basedir}/target</directory>
-        <sourceDirectory>com/iit/cs586/david/src/main/java</sourceDirectory>
+        <sourceDirectory>src/com/iit/cs586/david/java</sourceDirectory>
         <outputDirectory>${project.build.directory}/classes</outputDirectory>
 
         <plugins>
@@ -27,7 +27,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>Driver.GasPumpDriver</mainClass>
+                            <mainClass>Main.GasPumpDriver</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
