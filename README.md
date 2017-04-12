@@ -10,9 +10,11 @@
     - InitState, S0, S1, S2, S3, S4, S5, S6 are the State subclasses 
     - State classes are responsible for performing both actions and state transitions
 2. Strategy Pattern
-    - implemented in package "OutputProcesor" of the GasPumpSystem Module
-    - OutputProcessor is the abstract superclass that contains abstract method declarations
-    - GasPumpOP1 & GasPumpOP2 both inherit these empty methods and implement them each in their own way
+    - implemented in package "ActionStrategy" of the GasPumpSystem Module
+    - OutputProcessor is the client class that needs to be initialized with proper action strategies
+    - The "ActionStrategy" package contains 14 sub-packages each with 3 classes
+    - One class is the abstract strategy that groups different implementations of a specific strategy
+    - The other 2 classes are GasPump-1 and GasPump-2 specific implementation for the meta-actions of the model
     according to specifications for their respective GasPump requirements.
 3. Abstract Factory Pattern
     - implemented in package "AbstractFactory" of the GasPumpSystem Module
@@ -21,7 +23,6 @@
     - ConcreteFactory2 is the factory that returns the necessary driver objects for GasPump2
     - The "GasPump" package contains the abstract class GasPump which uses the correct polymorphed AbstractFactory
     class to initialize the proper drivers for GasPump1 and GasPump2
-    - The constructors for GasPump1 and GasPump2 just call the super() constructor with the necessary parameter
 
 ### How to run
 To run the executable, from the root directory of the project:
