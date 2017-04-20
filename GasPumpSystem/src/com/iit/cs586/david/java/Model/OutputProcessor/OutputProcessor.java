@@ -1,5 +1,6 @@
 package Model.OutputProcessor;
 
+import AbstractFactory.AbstractFactory;
 import ActionStrategy.PayMsg.PayMsg;
 import ActionStrategy.PumpGasUnit.PumpGasUnit;
 import ActionStrategy.StopMsg.StopMsg;
@@ -17,13 +18,10 @@ import ActionStrategy.StoreData.StoreData;
 import PlatformData.Data;
 
 /*
-    This class is the abstract superclass in the Strategy design pattern
-    This OutputProcessor is instantiated by the appropriate ConcreteFactory for each GasPump.
-    Its meta-action attributes are set to the appropriate GasPump-specific actions
-    according to the Strategy pattern by the correct ConcreteFactory for each GasPump.
+    This class performs the platform independent actions of the meta-model. It calls the
+    specific GasPump implementation of these actions
 */
 public class OutputProcessor {
-    private Data data;
     private CancelMsg cancelMsg;
     private DisplayMenu displayMenu;
     private GasPumpedMsg gasPumpedMsg;
@@ -39,7 +37,21 @@ public class OutputProcessor {
     private StoreCash storeCash;
     private StoreData storeData;
 
-    public OutputProcessor() {
+    public OutputProcessor(AbstractFactory af) {
+        this.cancelMsg = af.getCancelMsg();
+        this.displayMenu = af.getDisplayMenu();
+        this.gasPumpedMsg = af.getGasPumpedMsg();
+        this.payMsg = af.getPayMsg();
+        this.printReceipt = af.getPrintReceipt();
+        this.pumpGasUnit = af.getPumpGasUnit();
+        this.readyMsg = af.getReadyMsg();
+        this.rejectMsg = af.getRejectMsg();
+        this.returnCash = af.getReturnCash();
+        this.setInitialValues = af.getSetInitialValues();
+        this.setPrice = af.getSetPrice();
+        this.stopMsg = af.getStopMsg();
+        this.storeCash = af.getStoreCash();
+        this.storeData = af.getStoreData();
     }
 
     /*
@@ -100,77 +112,6 @@ public class OutputProcessor {
 
     public void StoreData() {
         this.storeData.storeData();
-    }
-
-
-
-    /*
-        GETTERS AND SETTERS
-    */
-
-
-    public Data getData() {
-        return data;
-    }
-
-    public void setCancelMsg(CancelMsg cancelMsg) {
-        this.cancelMsg = cancelMsg;
-    }
-
-    public void setData(Data data) {
-        this.data = data;
-    }
-
-    public void setDisplayMenu(DisplayMenu displayMenu) {
-        this.displayMenu = displayMenu;
-    }
-
-    public void setGasPumpedMsg(GasPumpedMsg gasPumpedMsg) {
-        this.gasPumpedMsg = gasPumpedMsg;
-    }
-
-    public void setPayMsg(PayMsg payMsg) {
-        this.payMsg = payMsg;
-    }
-
-    public void setPrintReceipt(PrintReceipt printReceipt) {
-        this.printReceipt = printReceipt;
-    }
-
-    public void setPumpGasUnit(PumpGasUnit pumpGasUnit) {
-        this.pumpGasUnit = pumpGasUnit;
-    }
-
-    public void setReadyMsg(ReadyMsg readyMsg) {
-        this.readyMsg = readyMsg;
-    }
-
-    public void setRejectMsg(RejectMsg rejectMsg) {
-        this.rejectMsg = rejectMsg;
-    }
-
-    public void setReturnCash(ReturnCash returnCash) {
-        this.returnCash = returnCash;
-    }
-
-    public void setSetInitialValues(SetInitialValues setInitialValues) {
-        this.setInitialValues = setInitialValues;
-    }
-
-    public void setSetPrice(SetPrice setPrice) {
-        this.setPrice = setPrice;
-    }
-
-    public void setStopMsg(StopMsg stopMsg) {
-        this.stopMsg = stopMsg;
-    }
-
-    public void setStoreCash(StoreCash storeCash) {
-        this.storeCash = storeCash;
-    }
-
-    public void setStoreData(StoreData storeData) {
-        this.storeData = storeData;
     }
 
 }

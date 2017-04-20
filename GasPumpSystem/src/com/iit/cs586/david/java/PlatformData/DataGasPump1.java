@@ -7,8 +7,6 @@ public class DataGasPump1 extends Data {
     public float    price;
     public int      G;
     public float    total;
-    public String   credit_card;
-
 
     // temporary variables
     public float a;

@@ -1,7 +1,7 @@
 package GasPump;
 
 import AbstractFactory.AbstractFactory;
-import InputProcessor.IPGasPump2;
+import PlatformData.DataGasPump2;
 
 public class GasPump2 extends GasPump {
     public GasPump2(AbstractFactory af) {
@@ -30,63 +30,72 @@ public class GasPump2 extends GasPump {
         );
     }
 
-    public void Activate(Integer a, Integer b, Integer c) {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.Activate(a, b, c);
+    public void Activate(int a, int b, int c) {
+        if (a > 0 && b > 0 && c > 0) {
+            DataGasPump2 d = (DataGasPump2) data;
+            d.a = a;
+            d.b = b;
+            d.c = c;
+            model.activate();
+        } else {
+            System.out.println("Activation failed!");
+            System.out.println("Prices must be greater than $0");
+        }
     }
 
     public void Start() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.Start();
+        model.start();
     }
 
-    public void PayCash(Float cash) {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.PayCash(cash);
+    public void PayCash(float cash) {
+        if (cash > 0) {
+            DataGasPump2 d = (DataGasPump2) data;
+            d.temp_cash = cash;
+            model.payType(2);
+        } else {
+            System.out.println("Cash amount must be greater than $0");
+        }
     }
 
     public void Cancel() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.Cancel();
+        model.cancel();
     }
 
     public void Regular() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.Regular();
+        model.selectGas(1);
     }
 
     public void Super() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.Super();
+        model.selectGas(2);
     }
 
     public void Premium() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.Premium();
+        model.selectGas(3);
     }
 
     public void StartPump() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.StartPump();
+        model.startPump();
     }
 
     public void PumpLiter() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.PumpLiter();
+        DataGasPump2 d = (DataGasPump2) data;
+        if (d.cash < d.price * (d.L + 1)) {
+            System.out.println("NOT ENOUGH CASH");
+            model.stopPump();
+        } else {
+            model.pump();
+        }
     }
 
     public void Stop() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.Stop();
+        model.stopPump();
     }
 
     public void Receipt() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.Receipt();
+        model.receipt();
     }
 
     public void NoReceipt() {
-        IPGasPump2 ip = (IPGasPump2) this.getIP();
-        ip.NoReceipt();
+        model.noReceipt();
     }
 }

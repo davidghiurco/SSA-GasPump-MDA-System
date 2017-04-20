@@ -1,10 +1,10 @@
 # Software Systems Architectures
 ## CS 586 Individual Project (Spring, 2017)
 
-### Design pattern requirement Indications
+### Design pattern requirement indications
 
 1. State Pattern (De-centralized)
-    - implemented in package "Model" of the GasPumpSystem Module
+    - implemented in package "Model/EFSM" of the GasPumpSystem Module
     - StateMachine is the "VM" class
     - State is the abstract State superclass
     - InitState, S0, S1, S2, S3, S4, S5, S6 are the State subclasses 
@@ -21,16 +21,16 @@
     - AbstractFactory is the abstract superclass
     - ConcreteFactory1 is the factory that returns the necessary driver objects for GasPump1
     - ConcreteFactory2 is the factory that returns the necessary driver objects for GasPump2
-    - The "GasPump" package contains the abstract class GasPump which uses the correct polymorphed AbstractFactory
+    - The "GasPump" package contains the abstract class GasPump which uses the correct poly-morphed AbstractFactory
     class to initialize the proper drivers for GasPump1 and GasPump2
 
 ### How to run
 To run the executable, from the root directory of the project:
 
-    $ java -jar GasPumpSystem/target/GasPumpSystem-1.1.jar
+    $ java -jar GasPumpSystem/target/GasPumpSystem-1.2.jar
     
 To compile the source code using Maven, then run the resulting executable:
     
     $ cd GasPumpSystem/
     $ mvn
-    $ java -jar target/GasPumpSystem-1.1.jar
+    $ java -jar target/GasPumpSystem-1.2.jar

@@ -1,7 +1,7 @@
 package GasPump;
 
 import AbstractFactory.AbstractFactory;
-import InputProcessor.IPGasPump1;
+import PlatformData.DataGasPump1;
 
 public class GasPump1 extends GasPump {
     public GasPump1(AbstractFactory af) {
@@ -29,58 +29,57 @@ public class GasPump1 extends GasPump {
         );
     }
 
-    public void Activate(Float a, Float b) {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Activate(a, b);
+    public void Activate(float a, float b) {
+        if (a > 0 && b > 0) {
+            DataGasPump1 d = (DataGasPump1) this.data;
+            d.a = a;
+            d.b = b;
+            model.activate();
+        } else {
+            System.out.println("Activation failed!");
+            System.out.println("Prices must be greater than $0");
+        }
     }
 
     public void Start() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Start();
+        model.start();
     }
 
     public void PayCredit() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.PayCredit();
+        model.payType(1);
+        System.out.println("PLEASE WAIT -- AUTHENTICATING CREDIT CARD");
     }
 
     public void Approve() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Approve();
+        model.approve();
     }
 
     public void Reject() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Reject();
-    }
-
-    public void Regular() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Regular();
-    }
-
-    public void Super() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Super();
+        model.reject();
     }
 
     public void Cancel() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.Cancel();
+        model.cancel();
+    }
+
+    public void Regular() {
+        model.selectGas(1);
+    }
+
+    public void Super() {
+        model.selectGas(2);
     }
 
     public void StartPump() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.StartPump();
+        model.startPump();
     }
 
     public void PumpGallon() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.PumpGallon();
+        model.pump();
     }
 
     public void StopPump() {
-        IPGasPump1 ip = (IPGasPump1) this.getIP();
-        ip.StopPump();
+        model.stopPump();
+        model.receipt();
     }
 }

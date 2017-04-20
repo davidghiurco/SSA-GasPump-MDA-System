@@ -6,7 +6,7 @@
 
     <groupId>com.iit.cs586.david</groupId>
     <artifactId>GasPumpSystem</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 
 
     <build>
