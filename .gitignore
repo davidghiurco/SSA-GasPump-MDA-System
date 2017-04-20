@@ -18,3 +18,5 @@ GasPumpSystem/target/classes/
 GasPumpSystem/target/generated-sources/
 GasPumpSystem/target/maven-archiver/
 GasPumpSystem/target/maven-status/
+GasPumpSystem/src/com/iit/cs586/david/resources/
+GasPumpSystem/src/com/iit/cs586/david/test/
