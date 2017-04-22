@@ -1,5 +1,8 @@
 package Model.EFSM;
 
+/*
+    State S1 in the EFSM model
+ */
 class S1 extends State {
 
     S1(StateMachine model) {
@@ -8,7 +11,11 @@ class S1 extends State {
 
     /*
         credit: t=1
+            Transition to State S2
+            No meta-action called
         cash:   t=2
+            Transition to State S3
+            Call StoreCash() and DisplayMenu() meta-actions
      */
     @Override
     void payType(int t) {

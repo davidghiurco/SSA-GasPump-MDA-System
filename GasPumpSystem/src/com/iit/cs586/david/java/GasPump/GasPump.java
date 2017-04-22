@@ -25,6 +25,9 @@ public abstract class GasPump {
         this.model.setOP(new OutputProcessor(af));
     }
 
+    /*
+        Each GasPump must display a menu of its supported operations
+     */
     public abstract void printOperations();
 
 }

@@ -7,7 +7,7 @@ import Model.OutputProcessor.OutputProcessor;
     State classes are responsible for performing
         1) Actions
         2) State transitions
-*/
+ */
 
 public class StateMachine {
     protected State s;
@@ -15,7 +15,10 @@ public class StateMachine {
     private OutputProcessor op;
 
     public StateMachine() {
+        // list of states in the EFSM
         LS = new State[8];
+
+        // instantiate each state, passing in a reference to this VM class
         LS[7] = new InitState(this);
         LS[0] = new S0(this);
         LS[1] = new S1(this);
@@ -24,11 +27,12 @@ public class StateMachine {
         LS[4] = new S4(this);
         LS[5] = new S5(this);
         LS[6] = new S6(this);
+
         s = LS[7]; // Initially in the Init State
     }
     /*
         Getters and Setters
-    */
+     */
 
     public OutputProcessor getOP() {
         return op;
@@ -39,8 +43,8 @@ public class StateMachine {
     }
 
     /*
-        State operations
-    */
+        State operations --> forward the called operation to the state class
+     */
 
     public void activate() {
         s.activate();
@@ -51,8 +55,8 @@ public class StateMachine {
     }
 
     /*
-        credit: t=1
-        cash:   t=2
+        @param t : t = 1 represents credit card payment type
+                   t = 2 represents cash payment type
      */
     public void payType(int t) {
         s.payType(t);
@@ -71,10 +75,10 @@ public class StateMachine {
     }
 
     /*
-    Regular:    g=1
-    Super:      g=2
-    Premium:    g=3
- */
+        @param g: g = 1 represents Regular gas
+                  g = 2 represents Super gas
+                  g = 3 represents Premium gas
+     */
     public void selectGas(int g) {
         s.selectGas(g);
     }

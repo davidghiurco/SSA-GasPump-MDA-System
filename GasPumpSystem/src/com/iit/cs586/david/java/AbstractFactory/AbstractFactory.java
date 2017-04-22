@@ -18,9 +18,10 @@ import PlatformData.Data;
 
 /*
     This class groups all ConcreteFactory classes under 1 abstract superclass
-    It defines the method that returns a GasPump specific component
+    It defines the methods that return the GasPump specific action components which
+    all ConcreteFactories need to implement
 
-*/
+ */
 public abstract class AbstractFactory {
 
     public abstract Data getDataObj();

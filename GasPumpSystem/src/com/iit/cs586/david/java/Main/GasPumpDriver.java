@@ -34,8 +34,8 @@ public class GasPumpDriver {
                                     "\n(2) PayCredit " +
                                     "\n(3) Approve " +
                                     "\n(4) Reject" +
-                                    "\n(5) SelectRegularGas " +
-                                    "\n(6) SelectSuperGas " +
+                                    "\n(5) Regular " +
+                                    "\n(6) Super " +
                                     "\n(7) Cancel " +
                                     "\n(8) StartPump " +
                                     "\n(9) PumpGallon " +
@@ -47,7 +47,7 @@ public class GasPumpDriver {
                         gp1.printOperations();
                         input = scan.readLine();
                         switch (input) {
-                            case "0": {
+                            case "0": { // Activate
                                 System.out.println(">Activate<");
                                 float a, b;
                                 System.out.println("Enter the price parameter a: ");
@@ -61,60 +61,60 @@ public class GasPumpDriver {
                                 }
                                 break;
                             }
-                            case "1": {
+                            case "1": { // Start
                                 System.out.println(">Start<");
                                 gp1.Start();
                                 break;
                             }
-                            case "2": {
+                            case "2": { // PayCredit
                                 System.out.println(">PayCredit");
                                 gp1.PayCredit();
                                 break;
                             }
-                            case "3": {
+                            case "3": { // Approve
                                 System.out.println(">Approve<");
                                 gp1.Approve();
                                 break;
                             }
-                            case "4": {
+                            case "4": { // Reject
                                 System.out.println(">Reject<");
                                 gp1.Reject();
                                 break;
                             }
-                            case "5": {
-                                System.out.println(">SelectRegularGas<");
+                            case "5": { // Regular
+                                System.out.println(">Regular<");
                                 gp1.Regular();
                                 break;
                             }
-                            case "6": {
-                                System.out.println(">SelectSuperGas<");
+                            case "6": { // Super
+                                System.out.println(">Super<");
                                 gp1.Super();
                                 break;
                             }
-                            case "7": {
+                            case "7": { // Cancel
                                 System.out.println(">Cancel<");
                                 gp1.Cancel();
                                 break;
                             }
-                            case "8": {
+                            case "8": { // StartPump
                                 System.out.println(">StartPump<");
                                 gp1.StartPump();
                                 break;
                             }
-                            case "9": {
+                            case "9": { // PumpGallon
                                 System.out.println(">PumpGallon<");
                                 gp1.PumpGallon();
                                 break;
                             }
-                            case "x": {
+                            case "x": { // StopPump
                                 System.out.println(">StopPump<");
                                 gp1.StopPump();
                                 break;
                             }
-                            case "q": {
+                            case "q": { // Quit
                                 break;
                             }
-                            default: {
+                            default: { // Anything else: unknown / unsupported operation
                                 System.out.println("Unknown operation: '" + input + "'");
                                 System.out.println("Please select a valid operation");
                                 break;
@@ -134,9 +134,9 @@ public class GasPumpDriver {
                                     "\n(0) Activate (int a, int b, int c)" +
                                     "\n(1) Start" +
                                     "\n(2) PayCash" +
-                                    "\n(3) SelectRegularGas " +
-                                    "\n(4) SelectSuperGas " +
-                                    "\n(5) SelectPremiumGas " +
+                                    "\n(3) Regular " +
+                                    "\n(4) Super " +
+                                    "\n(5) Premium " +
                                     "\n(6) Cancel" +
                                     "\n(7) StartPump" +
                                     "\n(8) PumpLiter" +
@@ -150,7 +150,7 @@ public class GasPumpDriver {
                         gp2.printOperations();
                         input = scan.readLine();
                         switch (input) {
-                            case "0": {
+                            case "0": { // Activate
                                 System.out.println(">Activate<");
                                 int a, b, c;
                                 System.out.println("Enter the price parameter a: ");
@@ -166,13 +166,13 @@ public class GasPumpDriver {
                                 }
                                 break;
                             }
-                            case "1": {
+                            case "1": { // Start
                                 System.out.println(">Start<");
                                 gp2.Start();
                                 break;
                             }
-                            case "2": {
-                                System.out.println(">Pay Cash<");
+                            case "2": { // PayCash
+                                System.out.println(">PayCash<");
                                 System.out.println("Insert cash (enter $ amount): ");
                                 try {
                                     float cash = Float.parseFloat(scan.readLine());
@@ -182,55 +182,55 @@ public class GasPumpDriver {
                                 }
                                 break;
                             }
-                            case "3": {
-                                System.out.println(">Select Regular Gas<");
+                            case "3": { // Regular
+                                System.out.println(">Regular<");
                                 gp2.Regular();
                                 break;
                             }
-                            case "4": {
-                                System.out.println(">Select Super Gas");
+                            case "4": { // Super
+                                System.out.println(">Super<");
                                 gp2.Super();
                                 break;
                             }
-                            case "5": {
-                                System.out.println(">Select Premium Gas");
+                            case "5": { // Premium
+                                System.out.println(">Premium<");
                                 gp2.Premium();
                                 break;
                             }
-                            case "6": {
+                            case "6": { // Cancel
                                 System.out.println(">Cancel<");
                                 gp2.Cancel();
                                 break;
                             }
-                            case "7": {
-                                System.out.println(">Start Pump<");
+                            case "7": { // Start
+                                System.out.println(">StartPump<");
                                 gp2.StartPump();
                                 break;
                             }
-                            case "8": {
-                                System.out.println(">Pump Liter<");
+                            case "8": { // PumpLiter
+                                System.out.println(">PumpLiter<");
                                 gp2.PumpLiter();
                                 break;
                             }
-                            case "9": {
+                            case "9": { // Stop
                                 System.out.println(">Stop<");
                                 gp2.Stop();
                                 break;
                             }
-                            case "p": {
-                                System.out.println(">Print Receipt<");
+                            case "p": { // PrintReceipt
+                                System.out.println(">PrintReceipt<");
                                 gp2.Receipt();
                                 break;
                             }
-                            case "n": {
-                                System.out.println(">No Receipt<");
+                            case "n": { // NoReceipt
+                                System.out.println(">NoReceipt<");
                                 gp2.NoReceipt();
                                 break;
                             }
-                            case "q": {
+                            case "q": { // Quit
                                 break;
                             }
-                            default: {
+                            default: { // Anything else: unknown / unsupported operation
                                 System.out.println("Unknown operation: '" + input + "'");
                                 System.out.println("Please enter a valid operation");
                                 break;

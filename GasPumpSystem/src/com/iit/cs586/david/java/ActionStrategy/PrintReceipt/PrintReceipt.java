@@ -2,6 +2,10 @@ package ActionStrategy.PrintReceipt;
 
 import PlatformData.Data;
 
+/*
+    Abstract PrintReceipt action strategy
+    Groups all "Print Receipt" actions under 1 abstract superclass
+ */
 public abstract class PrintReceipt {
     Data data;
 

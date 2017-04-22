@@ -3,12 +3,19 @@ package ActionStrategy.DisplayMenu;
 import PlatformData.Data;
 import PlatformData.DataGasPump1;
 
+/*
+    GasPump1 DisplayMenu action responsible for printing the main menu
+ */
 public class DisplayMenu1 extends DisplayMenu {
 
     public DisplayMenu1(Data data) {
         super(data);
     }
 
+    /*
+        Print a menu --> Also serves as the "credit card approved" message
+        Also reads the data structure to inform the user of current gas prices
+     */
     @Override
     public void displayMenu() {
         DataGasPump1 d = (DataGasPump1) data;

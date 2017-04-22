@@ -2,6 +2,10 @@ package ActionStrategy.SetInitialValues;
 
 import PlatformData.Data;
 
+/*
+    Abstract SetInitialValues action strategy
+    Groups all "Set Initial Values" actions under 1 abstract superclass
+ */
 public abstract class SetInitialValues {
     Data data;
 

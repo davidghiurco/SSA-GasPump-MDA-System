@@ -2,6 +2,10 @@ package ActionStrategy.PumpGasUnit;
 
 import PlatformData.Data;
 
+/*
+    Abstract PumpGasUnit action strategy
+    Groups all "Pump Gas Unit" actions under 1 abstract superclass
+ */
 public abstract class PumpGasUnit {
     Data data;
 

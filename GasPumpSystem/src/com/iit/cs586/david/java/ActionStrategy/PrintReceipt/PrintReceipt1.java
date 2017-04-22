@@ -3,12 +3,18 @@ package ActionStrategy.PrintReceipt;
 import PlatformData.Data;
 import PlatformData.DataGasPump1;
 
+/*
+    GasPump1 PrintReceipt action responsible for printing a receipt
+ */
 public class PrintReceipt1 extends PrintReceipt {
 
     public PrintReceipt1(Data data) {
         super(data);
     }
 
+    /*
+        Print a receipt by reading the appropriate values from the shared data structure
+     */
     @Override
     public void printReceipt() {
         System.out.println("Printing receipt ...");

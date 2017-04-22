@@ -15,12 +15,16 @@ import ActionStrategy.ReturnCash.ReturnCash;
 import ActionStrategy.SetInitialValues.SetInitialValues;
 import ActionStrategy.SetPrice.SetPrice;
 import ActionStrategy.StoreData.StoreData;
-import PlatformData.Data;
 
 /*
-    This class performs the platform independent actions of the meta-model. It calls the
-    specific GasPump implementation of these actions
-*/
+    This class is the general output processor for the gas pump system.
+    It must be initialized with the proper action implementations for the specific
+    gas pump that is desired. This is done thorough the Abstract Factory design pattern.
+
+    Each meta-action in this class calls the platform specific implementation of the action
+
+    This class acts as the "Client" class in the strategy design pattern
+ */
 public class OutputProcessor {
     private CancelMsg cancelMsg;
     private DisplayMenu displayMenu;
@@ -55,8 +59,8 @@ public class OutputProcessor {
     }
 
     /*
-        Meta-actions (implemented using Strategy pattern
-    */
+     *  Meta-actions (implemented using Strategy pattern)
+     */
 
     public void CancelMsg() {
         this.cancelMsg.cancelMsg();
