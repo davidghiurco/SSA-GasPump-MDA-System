@@ -4,20 +4,20 @@
 ### Design pattern requirement indications
 
 1. State Pattern (De-centralized)
-    - implemented in package "Model/EFSM" of the GasPumpSystem Module
+    - Implemented in package "Model/EFSM" of the GasPumpSystem Module
     - StateMachine is the "VM" class
     - State is the abstract State superclass
     - InitState, S0, S1, S2, S3, S4, S5, S6 are the State subclasses 
     - State classes are responsible for performing both actions and state transitions
 2. Strategy Pattern
-    - implemented in package "ActionStrategy" of the GasPumpSystem Module
+    - Implemented in package "ActionStrategy" of the GasPumpSystem Module
     - OutputProcessor is the client class that needs to be initialized with proper action strategies
     - The "ActionStrategy" package contains 14 sub-packages each with 3 classes
     - One class is the abstract strategy that groups different implementations of a specific strategy
     - The other 2 classes are GasPump-1 and GasPump-2 specific implementation for the meta-actions of the model
     according to specifications for their respective GasPump requirements.
 3. Abstract Factory Pattern
-    - implemented in package "AbstractFactory" of the GasPumpSystem Module
+    - Implemented in package "AbstractFactory" of the GasPumpSystem Module
     - AbstractFactory is the abstract superclass
     - ConcreteFactory1 is the factory that returns the necessary driver objects for GasPump1
     - ConcreteFactory2 is the factory that returns the necessary driver objects for GasPump2
